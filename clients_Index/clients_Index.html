@@ -1,0 +1,50 @@
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Clients</h3>
+        </div>
+        <div class="col-md-5">
+           <h3>Search: <input type="text" ng-model="search"> </h3> 
+        </div>
+        
+        <div>
+            <a href="#!/client_Add" class="btn btn-info"> Add Customer </a>
+        </div>
+        
+       
+
+        
+
+
+
+<table class = "table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Phone Number</th>
+            <th width = 200 >Actions</th>
+            
+            
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr ng-repeat="user_client in data | filter:search">
+            <td>{{user_client.name}}</td>
+            <td>{{user_client.email}}</td>
+            <td>{{user_client.phone}}</td>
+            
+            <td>
+                <a href="#!/clients_Update/{{user_client.$id}}" class="btn btn-info"> edit </a>
+                <a href="" ng-click="deleteUser(user_client)" class="btn btn-danger"> delete </a>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+</div>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin Portal - TaskDone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+    
+    /* body{
+      margin-left: 50px;
+      margin-right: 50px;
+    } */
+
+
+    .sidebar {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 220px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+    </style>
+
+</head>
+ 
+
+<body>
+   
+    
+
+    
+
+
+    <!-- <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          
+          <ul class="nav navbar-nav"> -->
+            <!-- <li class="active"><a href="index.html">Home</a></li> -->
+            <!-- <li><a href="#!/page1">Home</a></li>
+            <li><a href="#!/page2">Customers</a></li>
+          
+          </ul>
+        </div>
+      </nav>
+     -->
+      
+
+     <div class="sidebar">
+      
+      <h3>  TaskDone </h3>
+      
+      <a href="#!/worker_Index"><i class="fa fa-fw fa-group"></i> Workers</a>
+      <a href="#!/clients_Index"><i class="fa fa-fw fa-user"></i> Clients</a>
+      <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+      <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    </div>
+
+    <div class="main">
+
+      <h4>Task Done - Admin Portal</h4>
+
+        <ng-view></ng-view>
+
+       
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>  
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/firebase/firebase.js"></script>
+        <script src="bower_components/angularfire/dist/angularfire.js"></script> 
+        
+        <script type='text/javascript' src="app.js"></script>
+        
+        <script src="worker_Index/worker_Index.js"></script>
+        <script src="worker_Add/worker_Add.js"></script>  
+        <script src="worker_Update/worker_Update.js"></script>
+       
+        <script src="clients_Index/clients_Index.js"></script>  
+        <script src="client_Add/client_Add.js"></script> 
+        <script src="clients_Update/clients_Update.js"></script> 
+
+        <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCijjIhhT9e0qwyu-CGQx2HGHW6_sOAfMc",
+    authDomain: "students-502ec.firebaseapp.com",
+    databaseURL: "https://students-502ec.firebaseio.com",
+    projectId: "students-502ec",
+    storageBucket: "students-502ec.appspot.com",
+    messagingSenderId: "933481146982"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</div>
+
+</body>
+</html>
